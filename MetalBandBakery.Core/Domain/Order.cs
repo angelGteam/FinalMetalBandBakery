@@ -1,42 +1,35 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace MetalBandBakery.Core.Domain
-{
-	public class Order
-	{
-		private List<OrderLine> _listOfItems;
+namespace MetalBandBakery.Core.Domain {
+    public class Order {
+        private List<OrderLine> _listOfItems;
 
-		public Order()
-		{
-			_listOfItems = new List<OrderLine>();
-		}
+        public Order() {
+            _listOfItems = new List<OrderLine>();
+        }
 
-		public decimal AmountToPay { get { return _listOfItems.Sum(t => t.TotalPrice); } }
+        public decimal AmountToPay { get { return _listOfItems.Sum(t => t.TotalPrice); } }
 
-		public IEnumerable<OrderLine> OrderLines { get { return _listOfItems; } }
+        public IEnumerable<OrderLine> OrderLines { get { return _listOfItems; } }
 
-		public void AddItems(string[] itemIds)
-		{
-			foreach (var itemId in itemIds)
-			{
-				var ol = _listOfItems.FirstOrDefault(l => l.ItemId == itemId);
-				if (ol == null)
-					_listOfItems.Add(new OrderLine(itemId));
-				else
-					ol.IncresaseAmount();
-			}
-		}
+        public void AddItems(string[] itemIds) {
+            foreach(var itemId in itemIds) {
+                var ol = _listOfItems.FirstOrDefault(l => l.ItemId == itemId);
+                if(ol == null)
+                    _listOfItems.Add(new OrderLine(itemId));
+                else
+                    ol.IncresaseAmount();
+            }
+        }
 
-		public bool CanBePurchase()
-		{
-			return AmountToPay > 0;
-		}
+        public bool CanBePurchase() {
+            return AmountToPay > 0;
+        }
 
-		public void SetPrice(string itemId, decimal itemPrice)
-		{
-			var item = _listOfItems.FirstOrDefault(li => li.ItemId == itemId);
-			item.BasePrice = itemPrice;
-		}
-	}
+        public void SetPrice(string itemId, decimal itemPrice) {
+            var item = _listOfItems.FirstOrDefault(li => li.ItemId == itemId);
+            item.BasePrice = itemPrice;
+        }
+    }
 }

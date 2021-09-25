@@ -19,7 +19,11 @@ namespace MetalBandBakey.Infra.Repository
 			return _prices[itemId];
 		}
 
-		private bool Exists(string itemId)
+        public void SetPrice(string itemId, decimal quantity) {
+            throw new System.NotImplementedException();
+        }
+
+        private bool Exists(string itemId)
 		{
 			return _prices.ContainsKey(itemId);
 		}

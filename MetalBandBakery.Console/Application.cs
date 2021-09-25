@@ -13,6 +13,8 @@ namespace MetalBandBakery {
         }
 
         public void Run() {
+            _priceService.SetPrice("M", 10.00M);
+            var itemPrice = _priceService.GetPrice("M");
             var order = new Order();
             order.AddItems(UserIsAskedWhatHeWants());
             ShowPurchasingItems(order);
