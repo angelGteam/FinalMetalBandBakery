@@ -1,0 +1,32 @@
+﻿@using UserAplication.Controllers;
+@using System;
+@{
+    ViewBag.Title = "Stock";
+}
+<h2>This is the page for the administration of Stock</h2>
+@foreach(var item in @Model) {
+    <li>
+        @item
+    </li>
+}
+@{
+    string currentItemId="M";
+}
+<form>
+    <label for="">Ammount of money to introduce: </label> <br>
+    <input type="text" id="Ammount" name="Ammount">
+    <input type="submit" value="Pay" id="IntroduceMoney" /><br>
+    <label for="">Id of the Item: </label> <br>
+    <input type="text" id="ItemId" name="ItemId">
+    <div class="BuyItem">
+        @Html.ActionLink(
+          "BuyItem",
+          "StockController",
+          new { itemId = currentItemId },
+          null
+          )
+    </div>
+    <button type="button" onclick="location.href='@Url.Action("BuyItem", "StockController")'">
+        Create New
+    </button>
+</form>

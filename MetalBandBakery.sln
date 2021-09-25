@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetalBandBakery.Console", "MetalBandBakery.Console\MetalBandBakery.Console.csproj", "{BAF55ABD-2FDE-433E-B3B8-5DAF93C2FFA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetalBandBakery.Core", "MetalBandBakery.Core\MetalBandBakery.Core.csproj", "{1077345E-0264-4B9F-B698-5FE754056AAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetalBandBakey.Infra", "MetalBandBakey.Infra\MetalBandBakey.Infra.csproj", "{4C831473-32F2-4B53-970C-52DCFAD68C3A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0E9BDCF3-E001-4D0E-B716-9313B78B1773} = {0E9BDCF3-E001-4D0E-B716-9313B78B1773}
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MetalBandBakery.InventoryWCF", "MetalBandBakery.InventoryWCF\", "{0E9BDCF3-E001-4D0E-B716-9313B78B1773}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_1079"
+		Debug.AspNetCompiler.PhysicalPath = "MetalBandBakery.InventoryWCF\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1079\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_1079"
+		Release.AspNetCompiler.PhysicalPath = "MetalBandBakery.InventoryWCF\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1079\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1079"
+		SlnRelativePath = "MetalBandBakery.InventoryWCF\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetalBandBakery.PriceServicesWebAPI", "MetalBandBaket.PriceServicesWebAPI\MetalBandBakery.PriceServicesWebAPI.csproj", "{A8596225-6B22-42EC-A484-2307BBCC4C2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetalBandBakery.UserAplication", "UserAplication\MetalBandBakery.UserAplication.csproj", "{4755A3D1-7771-4FD6-B480-1E7E590701A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAF55ABD-2FDE-433E-B3B8-5DAF93C2FFA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAF55ABD-2FDE-433E-B3B8-5DAF93C2FFA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAF55ABD-2FDE-433E-B3B8-5DAF93C2FFA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAF55ABD-2FDE-433E-B3B8-5DAF93C2FFA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1077345E-0264-4B9F-B698-5FE754056AAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1077345E-0264-4B9F-B698-5FE754056AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1077345E-0264-4B9F-B698-5FE754056AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1077345E-0264-4B9F-B698-5FE754056AAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C831473-32F2-4B53-970C-52DCFAD68C3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C831473-32F2-4B53-970C-52DCFAD68C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C831473-32F2-4B53-970C-52DCFAD68C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C831473-32F2-4B53-970C-52DCFAD68C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E9BDCF3-E001-4D0E-B716-9313B78B1773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E9BDCF3-E001-4D0E-B716-9313B78B1773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E9BDCF3-E001-4D0E-B716-9313B78B1773}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E9BDCF3-E001-4D0E-B716-9313B78B1773}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{A8596225-6B22-42EC-A484-2307BBCC4C2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8596225-6B22-42EC-A484-2307BBCC4C2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8596225-6B22-42EC-A484-2307BBCC4C2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8596225-6B22-42EC-A484-2307BBCC4C2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4755A3D1-7771-4FD6-B480-1E7E590701A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4755A3D1-7771-4FD6-B480-1E7E590701A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4755A3D1-7771-4FD6-B480-1E7E590701A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4755A3D1-7771-4FD6-B480-1E7E590701A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D00826E-7BF6-4078-8B16-179FBB38A78B}
+	EndGlobalSection
+EndGlobal
