@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
 
-// NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService" in both code and config file together.
 [ServiceContract]
-public interface IService
-{
+public interface IService {
+    [OperationContract]
+    int CheckStock(string itemId);
 
-	[OperationContract]
-	int CheckStock(string itemId);
+    [OperationContract]
+    bool ReduceStock(string itemId, int quantity);
+    [OperationContract]
+    void IncreaseStock(string itemId, int quantity);
 
-	[OperationContract]
-	bool ReduceStock(string itemId);
-	void IncreaseStock(string itemId, int quantity);
+    [OperationContract]
+    List<ItemStock> CheckCompleteStock();
 }

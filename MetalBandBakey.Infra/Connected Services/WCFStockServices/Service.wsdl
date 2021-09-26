@@ -4,6 +4,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:1079/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:1079/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1079/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService_CheckStock_InputMessage">
@@ -18,6 +19,18 @@
   <wsdl:message name="IService_ReduceStock_OutputMessage">
     <wsdl:part name="parameters" element="tns:ReduceStockResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_IncreaseStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:IncreaseStock" />
+  </wsdl:message>
+  <wsdl:message name="IService_IncreaseStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IncreaseStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckCompleteStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCompleteStock" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckCompleteStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckCompleteStockResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="CheckStock">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/CheckStock" message="tns:IService_CheckStock_InputMessage" />
@@ -26,6 +39,14 @@
     <wsdl:operation name="ReduceStock">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/ReduceStock" message="tns:IService_ReduceStock_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/ReduceStockResponse" message="tns:IService_ReduceStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IncreaseStock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IncreaseStock" message="tns:IService_IncreaseStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IncreaseStockResponse" message="tns:IService_IncreaseStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCompleteStock">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CheckCompleteStock" message="tns:IService_CheckCompleteStock_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CheckCompleteStockResponse" message="tns:IService_CheckCompleteStock_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -41,6 +62,24 @@
     </wsdl:operation>
     <wsdl:operation name="ReduceStock">
       <soap:operation soapAction="http://tempuri.org/IService/ReduceStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncreaseStock">
+      <soap:operation soapAction="http://tempuri.org/IService/IncreaseStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCompleteStock">
+      <soap:operation soapAction="http://tempuri.org/IService/CheckCompleteStock" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

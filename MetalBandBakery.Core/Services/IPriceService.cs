@@ -4,6 +4,5 @@ namespace MetalBandBakery.Core.Services {
         decimal GetPrice(string itemId);
         void SetPrice(string itemId, decimal quantity);
         IEnumerable<ItemPrice> GetAllItemPrices();
-
     }
 }

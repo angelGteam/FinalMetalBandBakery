@@ -76,6 +76,10 @@
     <None Include="Connected Services\WCFStockServices\Service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\WCFStockServices\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\ItemStock.datasource" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">

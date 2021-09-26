@@ -1,31 +1,36 @@
 ﻿using MetalBandBakery.InventoryWCF.Repositories;
+using System.Collections.Generic;
 
-// NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service" in code, svc and config file together.
 public class Service : IService {
+    public List<ItemStock> CheckCompleteStock() {
+        IInventoryRepository inventoryRepository = new InventoryRepository();
+        return inventoryRepository.CheckCompleteStock();
+    }
+
     public int CheckStock(string itemId) {
-        IInventoryRepository svc = new InventoryRepository();
-        var item = svc.GetItem(itemId);
-        if (item == null)
+        IInventoryRepository inventoryRepository = new InventoryRepository();
+        var item = inventoryRepository.GetItem(itemId);
+        if(item == null)
             return 0;
+        inventoryRepository.SaveChanges();
         return item.Quantity;
     }
-
     public void IncreaseStock(string itemId, int quantity) {
-        IInventoryRepository svc = new InventoryRepository();
-        var item = svc.GetItem(itemId);
+        IInventoryRepository inventoryRepository = new InventoryRepository();
+        var item = inventoryRepository.GetItem(itemId);
         item.Quantity += quantity;
-        svc.Save(item);
+        inventoryRepository.SaveChanges();
     }
 
-    public bool ReduceStock(string itemId) {
-        IInventoryRepository svc = new InventoryRepository();
-        var item = svc.GetItem(itemId);
-        if (item == null)
+    public bool ReduceStock(string itemId, int quantity) {
+        IInventoryRepository inventoryRepository = new InventoryRepository();
+        var item = inventoryRepository.GetItem(itemId);
+        if(item == null)
             return false;
-        if (item.Quantity <= 0)
+        if(item.Quantity <= 0)
             return false;
-        item.Quantity--;
-        svc.Save(item);
+        item.Quantity -= quantity;
+        inventoryRepository.SaveChanges();
         return true;
     }
 }

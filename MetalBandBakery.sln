@@ -15,6 +15,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MetalBandBakery.InventoryWCF", "MetalBandBakery.InventoryWCF\", "{0E9BDCF3-E001-4D0E-B716-9313B78B1773}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		ProjectReferences = ""
 		Debug.AspNetCompiler.VirtualPath = "/localhost_1079"
 		Debug.AspNetCompiler.PhysicalPath = "MetalBandBakery.InventoryWCF\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1079\"

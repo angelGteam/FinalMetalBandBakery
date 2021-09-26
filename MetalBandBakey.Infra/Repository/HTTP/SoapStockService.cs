@@ -4,21 +4,21 @@ using System.Collections.Generic;
 namespace MetalBandBakey.Infra.Repository {
     public class SoapStockService : IStockService {
         public bool CheckStock(string itemId) {
-            WCFStockServices.IService svc = new WCFStockServices.ServiceClient();
-            return svc.CheckStock(itemId) > 0;
+            WCFStockServices.IService _WCFStockServices = new WCFStockServices.ServiceClient();
+            return _WCFStockServices.CheckStock(itemId) > 0;
         }
 
-        public void ReduceStock(string itemId) {
-            WCFStockServices.IService svc = new WCFStockServices.ServiceClient();
-            svc.ReduceStock(itemId);
+        public void ReduceStock(string itemId, int quantity) {
+            WCFStockServices.IService _WCFStockServices = new WCFStockServices.ServiceClient();
+            _WCFStockServices.ReduceStock(itemId, quantity);
         }
-        public void IncreaseStock(string itemId, int ammount) {
-            WCFStockServices.IService svc = new WCFStockServices.ServiceClient();
-            svc.IncreaseStock(itemId, ammount);
+        public void IncreaseStock(string itemId, int quantity) {
+            WCFStockServices.IService _WCFStockServices = new WCFStockServices.ServiceClient();
+            _WCFStockServices.IncreaseStock(itemId, quantity);
         }
-
-        public Dictionary<string, int> GetItemDictionary() {
-            throw new System.NotImplementedException();
+        public List<ItemStock> CheckCompleteStock() {
+            WCFStockServices.IService _WCFStockServices = new WCFStockServices.ServiceClient();
+            return _WCFStockServices.CheckCompleteStock();
         }
     }
 }
