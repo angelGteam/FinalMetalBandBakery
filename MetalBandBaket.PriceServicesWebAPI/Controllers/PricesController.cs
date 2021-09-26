@@ -19,27 +19,27 @@ namespace MetalBandBaket.PriceServicesWebAPI.Controllers {
         }
         [Route("GetAll")]
         [HttpGet]
-        public IEnumerable<ItemData> GetAllItems() {
+        public IEnumerable<ItemPrice> GetAllItems() {
             IItemPriceRepository repository = new ItemPriceRepository();
             var p = repository.GetAllItems();
             return p;
         }
         [Route("GetOne/itemId/{itemId}")]
         [HttpGet]
-        public ItemData GetOneItem(string itemId) {
+        public ItemPrice GetOneItem(string itemId) {
             IItemPriceRepository repository = new ItemPriceRepository();
             var itemPrice = repository.GetOneItem(itemId);
             return itemPrice;
         }
         [Route("SetPrice")]
         [HttpPost]
-        public void ChangePrice(ItemData itemPrice) {
+        public void ChangePrice(ItemPrice itemPrice) {
             IItemPriceRepository repository = new ItemPriceRepository();
             repository.SetPrice(itemPrice.ItemId, itemPrice.Price);
         }
         [Route("AddNewItem")]
         [HttpPost]
-        public void AddNewItem(ItemData itemPrice) {
+        public void AddNewItem(ItemPrice itemPrice) {
             IItemPriceRepository repository = new ItemPriceRepository();
             repository.AddNewItem(itemPrice.ItemId, itemPrice.Price, itemPrice.Name);
         }

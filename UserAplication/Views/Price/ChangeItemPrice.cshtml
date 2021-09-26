@@ -1,0 +1,12 @@
+﻿@model ItemPrice
+@{
+    ViewBag.Title = "ChangeItemPrice";
+}
+@using(Html.BeginForm("ChangePrice", "Price")) {
+    @Html.HiddenFor(item => item.ItemId)
+<p>You are going to change the value for @Model.Name</p>
+    <div class="form-inline">
+        @Html.TextBoxFor(item => item.Price, new { @class = "form-control" })
+        <input type="submit" value="Set new price" class="btn btn-primary" />
+    </div>
+}

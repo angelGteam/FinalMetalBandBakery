@@ -12,7 +12,11 @@ namespace MetalBandBakey.Infra.Repository
 			_prices = new Dictionary<string, decimal>() { { "B", 0.65m }, { "M", 1.00m }, { "C", 1.35m }, { "W", 1.50m } };
 		}
 
-		public decimal GetPrice(string itemId)
+        public IEnumerable<ItemPrice> GetAllItemPrices() {
+            throw new System.NotImplementedException();
+        }
+
+        public decimal GetPrice(string itemId)
 		{
 			if (!Exists(itemId))
 				return 0m;

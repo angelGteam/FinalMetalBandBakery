@@ -55,6 +55,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BakeryLibraries\BakeryLibraries.csproj">
+      <Project>{A1DEAE9F-3265-4E24-BCAB-9C30DFB17508}</Project>
+      <Name>BakeryLibraries</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MetalBandBakery.Core\MetalBandBakery.Core.csproj">
       <Project>{1077345e-0264-4b9f-b698-5fe754056aaa}</Project>
       <Name>MetalBandBakery.Core</Name>

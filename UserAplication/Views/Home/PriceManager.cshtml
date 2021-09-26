@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "PriceManager";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+<table class="table table-dark table-striped">
+    <thead class=thead-dark>
+        <tr>
+            <th scope="col">ItemId</th>
+            <th scope="col">Price</th>
+            <th scope="col">Name</th>
+            <th scope="col">Edit price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in @Model) {
+            <tr>
+                <th>@item.ItemId</th>
+                <th>@item.Price</th>
+                <th>@item.Name</th>
+                <th>@Html.ActionLink("Change item price","ItemPrice", "Price", new { itemId = item.ItemId }, null)</th>
+            </tr>
+        }
+    </tbody>
+</table>
+<address>
+    <strong>Support:</strong><a href="mailto:agomez@gteam.es">agomez@gteam.es</a><br />
+</address>

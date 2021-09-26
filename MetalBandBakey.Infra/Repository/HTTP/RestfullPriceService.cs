@@ -6,37 +6,23 @@ using System.Text;
 
 namespace MetalBandBakey.Infra.Repository {
     public class RestfullPriceService : IPriceService {
-        public class ItemData {
-            private decimal quantity;
-
-            public ItemData(string itemId, decimal quantity, string name=null) {
-                this.itemId = itemId;
-                this.quantity = quantity;
-                this.name = name;
-            }
-
-            public string itemId { get; set; }
-            public decimal price { get; set; }
-            public string name { get; set; }
-        }
-
         public decimal GetPrice(string itemId) {
             string apiUrl = "https://localhost:44330/prices/GetOne/itemID";
             using(WebClient client = new WebClient()) {
                 client.Headers["Content-type"] = "application/json";
                 client.Encoding = Encoding.UTF8;
                 string json = client.DownloadString($"{apiUrl}/{itemId}");
-                var itemPrice = JsonConvert.DeserializeObject<ItemData>(json);
-                return itemPrice.price;
+                var itemPrice = JsonConvert.DeserializeObject<ItemPrice>(json);
+                return itemPrice.Price;
             }
         }
-        public IEnumerable<ItemData> GetAllItemPrices(string itemId) {
+        public IEnumerable<ItemPrice> GetAllItemPrices() {
             string apiUrl = "https://localhost:44330/prices/GetAll";
             using(WebClient client = new WebClient()) {
                 client.Headers["Content-type"] = "application/json";
                 client.Encoding = Encoding.UTF8;
-                string json = client.DownloadString($"{apiUrl}/{itemId}");
-                var itemIenumerable = JsonConvert.DeserializeObject<IEnumerable<ItemData>>(json);
+                string json = client.DownloadString($"{apiUrl}");
+                var itemIenumerable = JsonConvert.DeserializeObject<IEnumerable<ItemPrice>>(json);
                 return itemIenumerable;
             }
         }
@@ -45,7 +31,7 @@ namespace MetalBandBakey.Infra.Repository {
             using(WebClient client = new WebClient()) {
                 client.Headers["Content-type"] = "application/json";
                 client.Encoding = Encoding.UTF8;
-                ItemData itemPrice = new ItemData(itemId, quantity);
+                ItemPrice itemPrice = new ItemPrice(itemId, quantity);
                 string jsonString = JsonConvert.SerializeObject(itemPrice);
                 client.UploadString($"{apiUrl}", "Post", jsonString);
             }
@@ -55,7 +41,7 @@ namespace MetalBandBakey.Infra.Repository {
             using(WebClient client = new WebClient()) {
                 client.Headers["Content-type"] = "application/json";
                 client.Encoding = Encoding.UTF8;
-                ItemData itemPrice = new ItemData(itemId, quantity, name);
+                ItemPrice itemPrice = new ItemPrice(itemId, quantity, name);
                 string jsonString = JsonConvert.SerializeObject(itemPrice);
                 client.UploadString($"{apiUrl}", "Post", jsonString);
             }

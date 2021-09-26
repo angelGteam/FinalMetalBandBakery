@@ -7,15 +7,15 @@ using System.Linq;
 namespace MetalBandBakery.PriceServicesWebAPI.Repositories {
     public class ItemPriceRepository : IItemPriceRepository {
 
-        private List<ItemData> _prices;
+        private List<ItemPrice> _prices;
 
         public ItemPriceRepository() {
-            _prices = new List<ItemData>();
-            _prices = JsonConvert.DeserializeObject<List<ItemData>>(ReadRepositoryOfItems());
+            _prices = new List<ItemPrice>();
+            _prices = JsonConvert.DeserializeObject<List<ItemPrice>>(ReadRepositoryOfItems());
             SaveChanges();
         }
 
-        public ItemData GetOneItem(string itemId) {
+        public ItemPrice GetOneItem(string itemId) {
             if(!Exists(itemId))
                 return null;
             return _prices.Where(m => m.ItemId == itemId).FirstOrDefault();
@@ -25,7 +25,7 @@ namespace MetalBandBakery.PriceServicesWebAPI.Repositories {
             return _prices.Where(m => m.ItemId == itemId) != null;
         }
 
-        public IEnumerable<ItemData> GetAllItems() {
+        public IEnumerable<ItemPrice> GetAllItems() {
             return _prices;
         }
         
@@ -48,7 +48,7 @@ namespace MetalBandBakery.PriceServicesWebAPI.Repositories {
         
         public void AddNewItem(string itemID, decimal price, string name) {
             if(!Exists(itemID)) {
-                var newItem = new ItemData{ItemId = itemID, Price = price, Name = name};
+                var newItem = new ItemPrice{ItemId = itemID, Price = price, Name = name};
                 _prices.Add(newItem);
                 SaveChanges();
             }           
