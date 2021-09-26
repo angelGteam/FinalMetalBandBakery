@@ -21,7 +21,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Stock Manager", "StockManager", "Home")</li>
+                    <li>@Html.ActionLink("Vending", "Vending", "Home")</li>
                     <li>@Html.ActionLink("Price Manager", "PriceManager", "Home")</li>
                 </ul>
             </div>
@@ -32,11 +33,9 @@
         <hr />
         <footer>
             <p>&copy; @DateTime.Now -Designed by Angel Gómez</p>
+            <strong>Support:</strong><a href="mailto:agomez@gteam.es">agomez@gteam.es</a><br />
         </footer>
     </div>
-    <address>
-        <strong>Support:</strong><a href="mailto:agomez@gteam.es">agomez@gteam.es</a><br />
-    </address>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

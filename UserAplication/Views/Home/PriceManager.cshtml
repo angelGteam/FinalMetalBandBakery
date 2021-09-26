@@ -18,7 +18,7 @@
                 <th>@item.ItemId</th>
                 <th>@item.Price</th>
                 <th>@item.Name</th>
-                <th>@Html.ActionLink("Change item price","ItemPrice", "Price", new { itemId = item.ItemId }, null)</th>
+                <th>@Html.ActionLink("Change item price", "ChangeItemPrice", "Price", new { itemId = item.ItemId }, null)</th>
             </tr>
         }
     </tbody>

@@ -13,14 +13,8 @@ namespace MetalBandBakery.Core.Domain {
 
         public IEnumerable<OrderLine> OrderLines { get { return _listOfItems; } }
 
-        public void AddItems(string[] itemIds) {
-            foreach(var itemId in itemIds) {
-                var ol = _listOfItems.FirstOrDefault(l => l.ItemId == itemId);
-                if(ol == null)
-                    _listOfItems.Add(new OrderLine(itemId));
-                else
-                    ol.IncresaseAmount();
-            }
+        public void AddItems(OrderLine order) {
+            _listOfItems.Add(order);
         }
 
         public bool CanBePurchase() {

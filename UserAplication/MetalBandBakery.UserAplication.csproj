@@ -161,11 +161,12 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\StockManager.cshtml" />
     <Content Include="Views\Home\PriceManager.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Price\ChangeItemPrice.cshtml" />
     <Content Include="Views\Stock\StockSupply.cshtml" />
+    <Content Include="Views\Home\Vending.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

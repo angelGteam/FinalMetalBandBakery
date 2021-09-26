@@ -1,0 +1,22 @@
+﻿@model
+@{
+    ViewBag.Title = "StockManager";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+<table class="table table-dark table-striped">
+    <thead class=thead-dark>
+        <tr>
+            <th scope="col">ItemId</th>
+            <th scope="col">Price</th>
+            <th scope="col">Edit stock</th>
+        </tr>
+    </thead>
+    @foreach(var item in @Model) {
+        <tr>
+            <th>@item.ItemId</th>
+            <th>@item.Price</th>
+            <th>@Html.ActionLink("Change stock", "StockSupply", "Stock", new { itemId = item.ItemId }, null)</th>
+        </tr>
+    }
+</table>

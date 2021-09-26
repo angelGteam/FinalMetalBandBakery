@@ -36,5 +36,13 @@ namespace MetalBandBakey.Infra.Repository
         public Dictionary<string, int> GetItemDictionary() {
 			return _stock;
         }
+
+        public void ReduceStock(string itemId, int ammount) {
+            throw new System.NotImplementedException();
+        }
+
+        public List<ItemStock> CheckCompleteStock() {
+            throw new System.NotImplementedException();
+        }
     }
 }

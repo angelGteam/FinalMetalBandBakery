@@ -2,10 +2,10 @@
 {
 	public class OrderLine
 	{
-		public OrderLine(string itemId)
+		public OrderLine(string itemId, int amount)
 		{
 			ItemId = itemId;
-			Amount = 1;
+			Amount = amount;
 		}
 
 		public int Amount { get; private set; }

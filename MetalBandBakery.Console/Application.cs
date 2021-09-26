@@ -46,7 +46,7 @@ namespace MetalBandBakery {
                 }
                 var itemPrice = _priceService.GetPrice(orderLine.ItemId);
                 order.SetPrice(orderLine.ItemId, itemPrice);
-                _stockService.ReduceStock(orderLine.ItemId);
+                _stockService.ReduceStock(orderLine.ItemId,2);
             }
             Console.WriteLine("Total: " + order.AmountToPay);
         }
