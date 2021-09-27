@@ -7,22 +7,11 @@ namespace MetalBandBaket.PriceServicesWebAPI.Controllers {
     [ApiController]
     [Route("[controller]")]
     public class PricesController : ControllerBase {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
-        private readonly ILogger<PricesController> _logger;
-
-        public PricesController(ILogger<PricesController> logger) {
-            _logger = logger;
-        }
         [Route("GetAll")]
         [HttpGet]
         public IEnumerable<ItemPrice> GetAllItems() {
             IItemPriceRepository repository = new ItemPriceRepository();
-            var p = repository.GetAllItems();
-            return p;
+            return repository.GetAllItems(); ;
         }
         [Route("GetOne/itemId/{itemId}")]
         [HttpGet]

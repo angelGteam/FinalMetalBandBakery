@@ -20,23 +20,14 @@
                 <th>@item.Price</th>
                 <th>@item.Name</th>
                 <th>
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                    </select>
+                    <a href='@Url.Action("AddToCart", "Home", new { ItemId = @item.ItemId },null)'>
+                        <input type="button" value="Add to cart">
+                    </a>
                 </th>
             </tr>
         }
     </tbody>
 </table>
-<a href='@Url.Action("AddToCart", "Home")'>
-    <input type="button" value="Add to cart">
+<a href='@Url.Action("BuyItemsInCart", "Home")'>
+    <input type="button" value="Pay">
 </a>

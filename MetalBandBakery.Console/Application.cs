@@ -16,7 +16,7 @@ namespace MetalBandBakery {
             _priceService.SetPrice("M", 10.00M);
             var itemPrice = _priceService.GetPrice("M");
             var order = new Order();
-            order.AddItems(UserIsAskedWhatHeWants());
+           // order.AddItems(UserIsAskedWhatHeWants());
             ShowPurchasingItems(order);
             if(order.CanBePurchase()) {
                 var amountPaid = AskUserForMoney();
@@ -51,9 +51,9 @@ namespace MetalBandBakery {
             Console.WriteLine("Total: " + order.AmountToPay);
         }
 
-        private string[] UserIsAskedWhatHeWants() {
+        private string UserIsAskedWhatHeWants() {
             Console.WriteLine("Items to Purchase?");
-            var items = Console.ReadLine().Split(',');
+            var items = Console.ReadLine();
             return items;
         }
     }

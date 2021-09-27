@@ -48,6 +48,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Repository\HTTP\RestPayService.cs" />
     <Compile Include="Repository\HTTP\RestfullPriceService.cs" />
     <Compile Include="Repository\HTTP\SoapStockService.cs" />
     <Compile Include="Repository\InMemory\InMemoryPriceService.cs" />

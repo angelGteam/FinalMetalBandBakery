@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Domain\Order.cs" />
     <Compile Include="Domain\OrderLine.cs" />
+    <Compile Include="Services\IPayService.cs" />
     <Compile Include="Services\IPriceService.cs" />
     <Compile Include="Services\IStockService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -9,10 +9,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Repositories\LocalRepositories\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <ProjectReference Include="..\BakeryLibraries\BakeryLibraries.csproj" />
 	</ItemGroup>
 

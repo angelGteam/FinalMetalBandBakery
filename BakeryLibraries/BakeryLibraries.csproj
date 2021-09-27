@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemPay.cs" />
     <Compile Include="ItemPrice.cs" />
     <Compile Include="ItemStock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
